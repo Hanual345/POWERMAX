@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWERMAX — Electrical Systems & Restoration Works | Moodbidri, Karnataka</title>
+    
+    <!-- Editorial Typography: Cormorant Garamond (Artistic Serif) + Syne / Plus Jakarta Sans (Grotesk) + Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Sophisticated Raw Palette: Charcoal, Warm Bone, Matte Raw Brass & Deep Oxidized Copper
+                        canvas: '#0B0B0C',
+                        bone: '#F4F1EA',
+                        boneMuted: '#9E9A90',
+                        linen: '#131316',
+                        lineDark: '#1E1E22',
+                        brass: '#D4A373',
+                        brassHover: '#E8B98A',
+                        burntCopper: '#C86D51',
+                        forestMoss: '#2E3A2E',
+                        waForest: '#25D366'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        display: ['"Syne"', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            cursor: default;
+        }
+
+        body {
+            background-color: #0B0B0C;
+            color: #F4F1EA;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tactile physical grain overlay - creates print editorial paper feel */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.038;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Custom Magnetic Cursor Follower */
+        #cursor-follower {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 163, 115, 0.45);
+            pointer-events: none;
+            z-index: 1000;
+            transition: transform 0.15s ease-out, width 0.25s ease, height 0.25s ease, background-color 0.25s ease;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        @media (pointer: fine) {
+            #cursor-follower { display: block; }
+            a, button, input, select, textarea { cursor: pointer; }
+        }
+
+        /* Subtle 1px borders with physical weight */
+        .editorial-line {
+            border-color: #1F1F24;
+        }
+
+        /* Subtle smooth image grayscale to warm color hover transition */
+        .tactile-img {
+            filter: grayscale(85%) contrast(108%);
+            transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .tactile-group:hover .tactile-img {
+            filter: grayscale(0%) contrast(100%);
+            transform: scale(1.03);
+        }
+
+        /* Typography tight tracking for massive artistic headings */
+        .editorial-hero-title {
+            letter-spacing: -0.03em;
+            line-height: 0.94;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0B0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232328;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4A373;
+        }
+    </style>
+</head>
+<body class="selection:bg-brass selection:text-black">
+
+    <!-- Paper Texture Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor-follower" aria-hidden="true"></div>
+
+    <!-- Floating WhatsApp & Phone Command (Minimal, Restrained Brass Dock) -->
+    <div class="fixed bottom-8 right-8 z-50 flex items-center gap-3">
+        <a href="https://wa.me/919845567967?text=Hello%20Powermax%2C%20I%20am%20inquiring%20about%20your%20inverter%20manufacturing%20and%20repair%20services%20in%20Karnataka." 
+           target="_blank" rel="noopener noreferrer" 
+           class="group px-6 py-3.5 rounded-full bg-[#161619] border border-brass/30 text-bone hover:border-brass hover:bg-brass hover:text-canvas transition-all duration-300 flex items-center gap-3 shadow-2xl backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-waForest animate-pulse"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-bone group-hover:text-canvas transition-colors">WhatsApp Direct</span>
+            <span class="font-mono text-xs text-brass group-hover:text-canvas">/ +91 98455 67967</span>
+        </a>
+    </div>
+
+    <!-- Top Navigation (Print Architectural Index Style) -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-canvas/85 backdrop-blur-md border-b editorial-line">
+        <div class="max-w-[1520px] mx-auto px-8 md:px-14 h-24 flex items-center justify-between">
+            <!-- Brand Mark -->
+            <a href="#" class="flex items-center gap-3 group">
+                <span class="font-serif text-3xl italic tracking-tight font-light text-bone group-hover:text-brass transition-colors">Powermax</span>
+                <span class="text-[10px] font-mono tracking-wider text-boneMuted uppercase px-2 py-0.5 rounded border border-bone/10">Moodbidri</span>
+            </a>
+
+            <!-- Editorial Menu / Index (Clean Minimal) -->
+            <nav class="hidden lg:flex items-center gap-10 text-sm font-medium text-boneMuted">
+                <a href="#atelier" class="hover:text-bone transition-colors">Inverters</a>
+                <a href="#laboratory" class="hover:text-bone transition-colors">Repairs</a>
+                <a href="#territory" class="hover:text-bone transition-colors">Karnataka Network</a>
+                <a href="#location" class="hover:text-bone transition-colors">Location</a>
+            </nav>
+
+            <!-- Direct Contact Link -->
+            <div class="flex items-center gap-4">
+                <a href="tel:+919845567967" class="hidden sm:inline-flex items-center gap-2 text-xs font-mono px-3.5 py-1.5 rounded-full border border-bone/15 text-boneMuted hover:text-brass hover:border-brass transition-colors">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brass"></i>
+                    <span>+91 98455 67967</span>
+                </a>
+                <a href="#contact" class="px-5 py-2 rounded-full bg-bone hover:bg-brass text-canvas font-medium text-xs tracking-wider transition-all duration-300">
+                    Inquire
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Asymmetric Architectural Spread) -->
+    <section class="relative pt-40 pb-24 md:pt-52 md:pb-36 px-8 md:px-14 max-w-[1520px] mx-auto border-b editorial-line">
+        <!-- Index marker -->
+        <div class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-boneMuted mb-12">
+            <span>[ FOLIO NO. 01 — SOLE ATELIER: MOODBIDRI, KA ]</span>
+            <span>ELECTRICAL CRAFT & RESTORATION</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+            <!-- Left Heavy Typographic Column -->
+            <div class="lg:col-span-8">
+                <h1 class="editorial-hero-title font-serif text-6xl sm:text-8xl md:text-[110px] lg:text-[130px] font-normal text-bone mb-10">
+                    Hand-wound in <span class="italic text-brass font-light">Moodbidri</span>.<br>
+                    Restored for all of Karnataka.
+                </h1>
+                
+                <p class="font-sans text-xl sm:text-2xl font-light text-boneMuted max-w-2xl leading-relaxed mb-12">
+                    We manufacture a singular, heavy-duty pure copper inverter configured to order — and operate an uncompromising diagnostic bench restoring any inverter, solar PCU, or voltage stabilizer.
+                </p>
+
+                <!-- Architectural Meta Specifications -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8 border-t editorial-line font-mono text-xs">
+                    <div>
+                        <div class="text-boneMuted uppercase tracking-widest mb-1">PROPRIETARY CORE</div>
+                        <div class="text-bone font-medium">1 Proven Platform</div>
+                        <div class="text-brass text-[11px] mt-0.5">850VA to 10kVA Configs</div>
+                    </div>
+                    <div>
+                        <div class="text-boneMuted uppercase tracking-widest mb-1">REPAIR DISCIPLINES</div>
+                        <div class="text-bone font-medium">Any Brand & Model</div>
+                        <div class="text-brass text-[11px] mt-0.5">Microtek, Luminous, Solar, Stabilizers</div>
+                    </div>
+                    <div>
+                        <div class="text-boneMuted uppercase tracking-widest mb-1">GEOGRAPHIC DISPATCH</div>
+                        <div class="text-bone font-medium">Statewide Karnataka</div>
+                        <div class="text-brass text-[11px] mt-0.5">Single Facility: Moodbidri</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Asymmetric Image & Inquire Card -->
+            <div class="lg:col-span-4 lg:pt-6">
+                <div class="tactile-group relative overflow-hidden rounded-2xl bg-linen border editorial-line p-8">
+                    <!-- Raw copper / tactile imagery representation -->
+                    <div class="w-full h-64 rounded-xl overflow-hidden mb-6 bg-[#0E0E11] relative">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" 
+                             alt="Industrial electrical hardware workshop bench" 
+                             class="tactile-img w-full h-full object-cover">
+                        <div class="absolute bottom-3 left-3 px-3 py-1 bg-canvas/80 backdrop-blur-md rounded font-mono text-[10px] tracking-widest uppercase text-brass">
+                            BENCH NO. 01 — MOODBIDRI
+                        </div>
+                    </div>
+
+                    <div class="font-mono text-xs uppercase tracking-widest text-boneMuted mb-2">DIRECT INQUIRY CHANNEL</div>
+                    <div class="font-serif text-3xl text-bone mb-3">Talk directly to the builder.</div>
+                    <p class="font-sans text-xs text-boneMuted leading-relaxed mb-6">
+                        No junior service agents. Your message is answered directly by our proprietor at the Moodbidri facility.
+                    </p>
+                    <a href="https://wa.me/919845567967?text=Hello%20Powermax%2C%20I%20would%20like%20to%20consult%20regarding%20inverter%20manufacturing%20or%20repair." 
+                       target="_blank" rel="noopener noreferrer" 
+                       class="w-full block py-4 text-center rounded-xl bg-bone hover:bg-brass text-canvas font-mono text-xs uppercase tracking-[0.2em] transition-all duration-300 font-bold">
+                        Message on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: THE MANUFACTURED MACHINE (One Core Architecture, Custom Configurations) -->
+    <section id="atelier" class="py-32 px-8 md:px-14 max-w-[1520px] mx-auto border-b editorial-line">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-end">
+            <div class="lg:col-span-7">
+                <span class="font-mono text-xs uppercase tracking-[0.25em] text-brass mb-4 block">[ SPECIFICATION OVERVIEW ]</span>
+                <h2 class="font-serif text-5xl sm:text-7xl font-normal text-bone leading-[1.04]">
+                    The Powermax Core.<br>
+                    <span class="italic text-boneMuted font-light">One enduring architecture, three distinct configurations.</span>
+                </h2>
+            </div>
+            <div class="lg:col-span-5">
+                <p class="font-sans text-base text-boneMuted leading-relaxed font-light">
+                    Mass-market retail inverters cut corners with thin aluminum wiring and stamped plastic chassis. In Moodbidri, we wind heavy electrical-grade pure copper coils onto grain-oriented laminations, ensuring faultless sinusoidal current that protects expensive appliances indefinitely.
+                </p>
+            </div>
+        </div>
+
+        <!-- 3 Curated Architectural Folios (Asymmetric Widths) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Folio A: Residential (850VA - 1500VA) -->
+            <div class="lg:col-span-4 p-8 sm:p-10 rounded-2xl bg-linen border editorial-line flex flex-col justify-between tactile-group">
+                <div>
+                    <div class="flex items-center justify-between font-mono text-xs text-boneMuted uppercase tracking-widest pb-6 border-b editorial-line mb-8">
+                        <span>CONFIG I / RESIDENTIAL</span>
+                        <span class="text-brass">12V — 24V BUS</span>
+                    </div>
+
+                    <h3 class="font-serif text-3xl sm:text-4xl text-bone mb-2">The Domestic Run</h3>
+                    <div class="font-mono text-sm text-brass mb-6">850 VA — 1500 VA Capacity</div>
+
+                    <p class="font-sans text-sm text-boneMuted leading-relaxed font-light mb-8">
+                        Calibrated for coastal Karnataka's harsh humidity and sudden line drops. Powers lighting circuits, ceiling fans, high-definition entertainment consoles, and home network routers without motor hum or harmonics.
+                    </p>
+
+                    <div class="font-mono text-xs space-y-3 text-boneMuted border-t editorial-line pt-6 mb-10">
+                        <div class="flex justify-between">
+                            <span>TRANSFORMER</span>
+                            <span class="text-bone">100% Solid Copper</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>WAVEFORM</span>
+                            <span class="text-bone">Pure Sine Wave</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>CUTOVER SPEED</span>
+                            <span class="text-bone">&lt; 8 Milliseconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/919845567967?text=Hello%20Powermax%2C%20I%20am%20inquiring%20about%20the%20Residential%20850VA-1500VA%20Inverter%20Configuration." 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="w-full text-center py-3.5 rounded-full border border-bone/20 hover:border-brass font-mono text-xs uppercase tracking-widest text-bone hover:text-brass transition-colors">
+                    Order 850VA — 1500VA
+                </a>
+            </div>
+
+            <!-- Folio B: Commercial & Clinical (2kVA - 3.5kVA) -->
+            <div class="lg:col-span-4 p-8 sm:p-10 rounded-2xl bg-[#151518] border border-brass/40 flex flex-col justify-between tactile-group relative">
+                <span class="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-brass text-canvas font-mono text-[10px] font-bold tracking-widest uppercase">
+                    REGIONAL STAPLE
+                </span>
+
+                <div>
+                    <div class="flex items-center justify-between font-mono text-xs text-brass uppercase tracking-widest pb-6 border-b border-brass/20 mb-8">
+                        <span>CONFIG II / COMMERCIAL</span>
+                        <span class="text-bone">24V — 48V BUS</span>
+                    </div>
+
+                    <h3 class="font-serif text-3xl sm:text-4xl text-bone mb-2">The Clinical & Retail</h3>
+                    <div class="font-mono text-sm text-brass mb-6">2 KVA — 3.5 KVA Capacity</div>
+
+                    <p class="font-sans text-sm text-boneMuted leading-relaxed font-light mb-8">
+                        High motor surge headroom engineered for dental surgical chairs, commercial refrigeration compressors, medical diagnostic equipment, and retail POS counters across Dakshina Kannada.
+                    </p>
+
+                    <div class="font-mono text-xs space-y-3 text-boneMuted border-t border-brass/20 pt-6 mb-10">
+                        <div class="flex justify-between">
+                            <span>COOLING ARCHITECTURE</span>
+                            <span class="text-bone">Dual Extruded Heatsink</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>SURGE MULTIPLIER</span>
+                            <span class="text-bone">300% Inductive Headroom</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>PROTECTION</span>
+                            <span class="text-bone">Optical Isolation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/919845567967?text=Hello%20Powermax%2C%20I%20am%20inquiring%20about%20the%20Commercial%202KVA-3.5KVA%20Inverter%20Configuration." 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="w-full text-center py-4 rounded-full bg-brass hover:bg-brassHover text-canvas font-mono text-xs uppercase tracking-widest font-bold transition-all shadow-lg">
+                    Order 2KVA — 3.5KVA
+                </a>
+            </div>
+
+            <!-- Folio C: Solar & Heavy Estate (5kVA - 10kVA) -->
+            <div class="lg:col-span-4 p-8 sm:p-10 rounded-2xl bg-linen border editorial-line flex flex-col justify-between tactile-group">
+                <div>
+                    <div class="flex items-center justify-between font-mono text-xs text-boneMuted uppercase tracking-widest pb-6 border-b editorial-line mb-8">
+                        <span>CONFIG III / SOLAR ESTATE</span>
+                        <span class="text-brass">48V — 120V BUS</span>
+                    </div>
+
+                    <h3 class="font-serif text-3xl sm:text-4xl text-bone mb-2">The Plantation & Villa</h3>
+                    <div class="font-mono text-sm text-brass mb-6">5 KVA — 10 KVA Capacity</div>
+
+                    <p class="font-sans text-sm text-boneMuted leading-relaxed font-light mb-8">
+                        Turnkey high-capacity inverter system featuring solar priority logic. Ideal for arecanut/coffee estate processing machinery, boutique homestays, and remote rural villas.
+                    </p>
+
+                    <div class="font-mono text-xs space-y-3 text-boneMuted border-t editorial-line pt-6 mb-10">
+                        <div class="flex justify-between">
+                            <span>SOLAR CONTROL</span>
+                            <span class="text-bone">Auto PV Priority Switch</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>BATTERY FLEXIBILITY</span>
+                            <span class="text-bone">Tubular & LiFePO4</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>GUARANTEE</span>
+                            <span class="text-bone">Direct Factory Warranty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/919845567967?text=Hello%20Powermax%2C%20I%20am%20inquiring%20about%20the%20Solar%20Estate%205KVA-10KVA%20Inverter%20Configuration." 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="w-full text-center py-3.5 rounded-full border border-bone/20 hover:border-brass font-mono text-xs uppercase tracking-widest text-bone hover:text-brass transition-colors">
+                    Order 5KVA — 10KVA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: THE RESTORATION LABORATORY (Any Inverter, Stabilizer, Solar) -->
+    <section id="laboratory" class="py-32 px-8 md:px-14 max-w-[1520px] mx-auto border-b editorial-line">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-start">
+            <div class="lg:col-span-8">
+                <span class="font-mono text-xs uppercase tracking-[0.25em] text-burntCopper mb-4 block">[ BENCH RESTORATION LAB ]</span>
+                <h2 class="font-serif text-5xl sm:text-7xl font-normal text-bone leading-[1.04]">
+                    We restore what others condemn.<br>
+                    <span class="italic text-boneMuted font-light">Component-level diagnostics for any make.</span>
+                </h2>
+            </div>
+            <div class="lg:col-span-4">
+                <p class="font-sans text-sm text-boneMuted leading-relaxed font-light">
+                    When an authorized service center declares an inverter "unrepairable" simply to force a new purchase, send it to Moodbidri. We troubleshoot down to discrete MOSFET channels, damaged relay contacts, and aged copper windings.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4 Disciplines Grid (Minimal Editorial Cards) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div class="p-8 rounded-2xl bg-linen border editorial-line">
+                <div class="font-mono text-xs text-brass mb-6">01 // DOMESTIC INVERTERS</div>
+                <h3 class="font-serif text-2xl text-bone mb-3">All Brands Restored</h3>
+                <p class="font-sans text-xs text-boneMuted leading-relaxed mb-6 font-light">
+                    Microtek, Luminous, Exide, Su-Kam, V-Guard, Amaron, and custom-assembled inverters.
+                </p>
+                <ul class="font-mono text-[11px] text-boneMuted space-y-2 border-t editorial-line pt-4">
+                    <li>— MOSFET burnout rebuilds</li>
+                    <li>— Battery charging circuit faults</li>
+                    <li>— Overload false-trigger repairs</li>
+                </ul>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-linen border editorial-line">
+                <div class="font-mono text-xs text-brass mb-6">02 // SOLAR INVERTERS & PCU</div>
+                <h3 class="font-serif text-2xl text-bone mb-3">Rooftop & Off-Grid Solar</h3>
+                <p class="font-sans text-xs text-boneMuted leading-relaxed mb-6 font-light">
+                    Solar hybrid charge controllers, string inverters, and high-voltage photovoltaic PCUs.
+                </p>
+                <ul class="font-mono text-[11px] text-boneMuted space-y-2 border-t editorial-line pt-4">
+                    <li>— MPPT charge controller card repair</li>
+                    <li>— Grid synchronization failure fix</li>
+                    <li>— Lightning & DC surge remediation</li>
+                </ul>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-linen border editorial-line">
+                <div class="font-mono text-xs text-brass mb-6">03 // VOLTAGE STABILIZERS</div>
+                <h3 class="font-serif text-2xl text-bone mb-3">Servo & Mainline Units</h3>
+                <p class="font-sans text-xs text-boneMuted leading-relaxed mb-6 font-light">
+                    Mainline home stabilizers, heavy AC voltage controllers, and agricultural pumpset servos.
+                </p>
+                <ul class="font-mono text-[11px] text-boneMuted space-y-2 border-t editorial-line pt-4">
+                    <li>— Relay spark chatter & carbon cleaning</li>
+                    <li>— Toroidal transformer rewinding</li>
+                    <li>— High/Low voltage cutoff calibration</li>
+                </ul>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-linen border editorial-line">
+                <div class="font-mono text-xs text-brass mb-6">04 // BATTERY ACCUMULATORS</div>
+                <h3 class="font-serif text-2xl text-bone mb-3">Health Testing & Terminals</h3>
+                <p class="font-sans text-xs text-boneMuted leading-relaxed mb-6 font-light">
+                    Tubular battery health assessments, specific gravity balancing, and heavy cabling.
+                </p>
+                <ul class="font-mono text-[11px] text-boneMuted space-y-2 border-t editorial-line pt-4">
+                    <li>— Backup drop load-cell diagnostics</li>
+                    <li>— Desulfation testing & acid gravity</li>
+                    <li>— Heavy copper terminal recrimping</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- WhatsApp Photo Assessment Ribbon -->
+        <div class="p-8 md:p-12 rounded-2xl bg-linen border border-brass/30 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+                <span class="font-mono text-xs uppercase tracking-widest text-brass block mb-1">IMMEDIATE VISUAL ASSESSMENT</span>
+                <h4 class="font-serif text-3xl text-bone">Have a damaged unit needing diagnosis?</h4>
+                <p class="font-sans text-xs text-boneMuted mt-1">Send a clear photo of the faulty machine and the problem description directly to WhatsApp.</p>
+            </div>
+            <a href="https://wa.me/919845567967?text=Hi%20Powermax%2C%20I%20have%20an%20inverter%2Fstabilizer%20needing%20repair.%20Here%20is%20a%20photo%20and%20the%20symptoms%3A" 
+               target="_blank" rel="noopener noreferrer" 
+               class="px-8 py-4 rounded-full bg-bone hover:bg-brass text-canvas font-mono text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300 shrink-0">
+                Send Photo on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 3: THE TERRITORY (All Over Karnataka, Rooted in Moodbidri) -->
+    <section id="territory" class="py-32 px-8 md:px-14 max-w-[1520px] mx-auto border-b editorial-line">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div class="lg:col-span-6">
+                <span class="font-mono text-xs uppercase tracking-[0.25em] text-brass mb-4 block">[ GEOGRAPHIC REACH ]</span>
+                <h2 class="font-serif text-5xl sm:text-7xl font-normal text-bone leading-[1.04] mb-8">
+                    One single atelier.<br>
+                    <span class="italic text-boneMuted font-light">Dispatched to every corner of Karnataka.</span>
+                </h2>
+                <p class="font-sans text-base text-boneMuted leading-relaxed font-light mb-10">
+                    We intentionally refuse to open diluted franchise branches. Every Powermax inverter is built and verified under the direct inspection of our master technician in <strong class="text-bone font-normal">Moodbidri</strong>. 
+                    Clients from Bengaluru, Mysuru, Hubballi, or the Ghats dispatch their systems to us via reliable regional parcel lines.
+                </p>
+            </div>
+
+            <!-- Outstation Repair Protocol -->
+            <div class="lg:col-span-6">
+                <div class="p-10 rounded-2xl bg-linen border editorial-line">
+                    <div class="font-mono text-xs uppercase tracking-widest text-brass mb-3">LOGISTICS PROTOCOL</div>
+                    <h3 class="font-serif text-3xl text-bone mb-6">How outstation repair works:</h3>
+
+                    <div class="space-y-6 font-sans text-sm text-boneMuted font-light">
+                        <div class="flex gap-4">
+                            <span class="font-mono text-xs text-brass shrink-0 mt-0.5">STEP 01</span>
+                            <p>Contact us on WhatsApp (<strong class="text-bone font-normal">+91 98455 67967</strong>) with your unit's symptoms and town in Karnataka.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="font-mono text-xs text-brass shrink-0 mt-0.5">STEP 02</span>
+                            <p>Dispatch the unit to our Moodbidri facility via transport carriers (VRL, Sugama, Navata, or local bus lines).</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="font-mono text-xs text-brass shrink-0 mt-0.5">STEP 03</span>
+                            <p>Our workshop performs a full diagnostic breakdown, restores all faulted elements, and records a live inductive load test video.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="font-mono text-xs text-brass shrink-0 mt-0.5">STEP 04</span>
+                            <p>The unit is securely crated and dispatched back to your address with verified test documentation.</p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/919845567967?text=Hi%20Powermax%2C%20I%20am%20from%20(Town%20in%20Karnataka)%20and%20want%20to%20send%20an%20inverter%2Fstabilizer%20for%20repair." 
+                       target="_blank" rel="noopener noreferrer" 
+                       class="w-full mt-10 block py-4 text-center rounded-full border border-bone/20 hover:border-brass font-mono text-xs uppercase tracking-widest text-bone hover:text-brass transition-colors">
+                        Arrange Parcel Dispatch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: LOCATION & CONTACT (Moodbidri Map & Phone) -->
+    <section id="location" class="py-32 px-8 md:px-14 max-w-[1520px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <!-- Left Info -->
+            <div class="lg:col-span-5">
+                <span class="font-mono text-xs uppercase tracking-[0.25em] text-brass mb-4 block">[ REPOSITORIUM & DISPATCH ]</span>
+                <h2 class="font-serif text-5xl sm:text-6xl font-normal text-bone leading-[1.04] mb-8">
+                    Visit or Transmit.
+                </h2>
+                <p class="font-sans text-sm text-boneMuted leading-relaxed font-light mb-10">
+                    You speak directly with the master technician and proprietor. No call center holds or ticketing delays.
+                </p>
+
+                <div class="space-y-6 font-mono text-xs mb-10">
+                    <div class="p-6 rounded-xl bg-linen border editorial-line">
+                        <div class="text-boneMuted uppercase tracking-widest text-[10px] mb-1">DIRECT TELEPHONY & WHATSAPP</div>
+                        <a href="tel:+919845567967" class="font-serif text-2xl text-bone hover:text-brass transition-colors block mt-1">+91 98455 67967</a>
+                        <div class="text-boneMuted text-[11px] mt-1">Available 8:00 AM — 9:00 PM IST</div>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-linen border editorial-line">
+                        <div class="text-boneMuted uppercase tracking-widest text-[10px] mb-1">OFFICIAL ATELIER ADDRESS</div>
+                        <div class="font-sans text-sm text-bone font-medium mt-1">Powermax Inverters Pvt. Ltd.</div>
+                        <div class="font-sans text-xs text-boneMuted mt-0.5">Moodbidri, Dakshina Kannada, Karnataka — 574227</div>
+                        <span class="text-brass text-[11px] mt-2 block">(Sole authorized company facility)</span>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-linen border editorial-line flex items-center justify-between">
+                        <div>
+                            <div class="text-boneMuted uppercase tracking-widest text-[10px] mb-1">CARTOGRAPHIC VERIFICATION</div>
+                            <div class="font-sans text-xs text-bone">Google Maps Registered Storefront</div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/cc5vegnQrebRo3KW6" target="_blank" rel="noopener noreferrer" 
+                           class="text-brass hover:text-bone transition-colors text-xs font-mono underline">
+                            Open Map &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="tel:+919845567967" class="flex-1 py-4 rounded-full bg-bone hover:bg-brass text-canvas font-mono text-xs uppercase tracking-widest font-bold text-center transition-all duration-300">
+                        Call Direct
+                    </a>
+                    <a href="https://maps.app.goo.gl/cc5vegnQrebRo3KW6" target="_blank" rel="noopener noreferrer" 
+                       class="flex-1 py-4 rounded-full border border-bone/20 hover:border-brass text-bone hover:text-brass font-mono text-xs uppercase tracking-widest text-center transition-colors">
+                        Map Directions
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Interactive Form -->
+            <div class="lg:col-span-7">
+                <div class="p-10 md:p-12 rounded-2xl bg-linen border editorial-line" id="contact">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-serif text-3xl text-bone">Transmission of Specifications</h3>
+                        <span class="font-mono text-[11px] text-brass">[ DIRECT DESPATCH ]</span>
+                    </div>
+                    <p class="font-sans text-xs text-boneMuted font-light mb-8">
+                        Enter your requirements below. Clicking transmit opens WhatsApp with a structured folio message sent directly to the technician:
+                    </p>
+
+                    <form class="space-y-6 font-mono text-xs" onsubmit="transmitToWhatsApp(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block uppercase tracking-widest text-boneMuted mb-2">Customer / Entity Name</label>
+                                <input type="text" id="orderName" required placeholder="e.g. Ramesh Shetty" class="w-full bg-canvas border editorial-line p-3.5 rounded text-bone focus:outline-none focus:border-brass transition-colors">
+                            </div>
+                            <div>
+                                <label class="block uppercase tracking-widest text-boneMuted mb-2">City / District in Karnataka</label>
+                                <input type="text" id="orderTown" required placeholder="e.g. Moodbidri / Udupi / Bangalore" class="w-full bg-canvas border editorial-line p-3.5 rounded text-bone focus:outline-none focus:border-brass transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block uppercase tracking-widest text-boneMuted mb-2">Nature of Requirement</label>
+                                <select id="orderService" class="w-full bg-canvas border editorial-line p-3.5 rounded text-bone focus:outline-none focus:border-brass transition-colors">
+                                    <option value="New Powermax Inverter (Custom Configuration)">Commission New Powermax Inverter (Hand-wound)</option>
+                                    <option value="Inverter Repair (Home/Commercial)">Inverter Repair (Microtek/Luminous/Exide/etc.)</option>
+                                    <option value="Solar Inverter / PCU Diagnostics">Solar Inverter / PCU Diagnostics</option>
+                                    <option value="Voltage Stabilizer Rebuild">Voltage Stabilizer Rebuild</option>
+                                    <option value="Battery Health & Accumulator Analysis">Battery Health & Accumulator Analysis</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block uppercase tracking-widest text-boneMuted mb-2">System Brand & Rating (If Repair)</label>
+                                <input type="text" id="orderRating" placeholder="e.g. 1500VA Microtek / 3.5kVA Solar" class="w-full bg-canvas border editorial-line p-3.5 rounded text-bone focus:outline-none focus:border-brass transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block uppercase tracking-widest text-boneMuted mb-2">Load Requirements / Problem Symptoms</label>
+                            <textarea id="orderDetails" rows="4" placeholder="Detail the fault symptoms (e.g. tripping, not charging, error buzz) or list appliances you need to power..." class="w-full bg-canvas border editorial-line p-3.5 rounded text-bone focus:outline-none focus:border-brass transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-full bg-brass hover:bg-brassHover text-canvas font-mono text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300">
+                            Transmit Folio via WhatsApp (+91 98455 67967)
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Monograph Footer -->
+    <footer class="border-t editorial-line py-16 px-8 md:px-14 max-w-[1520px] mx-auto font-mono text-xs text-boneMuted">
+        <div class="flex flex-col md:flex-row items-baseline justify-between gap-8 mb-12">
+            <div>
+                <span class="font-serif text-2xl italic text-bone block mb-1">Powermax Inverters Pvt. Ltd.</span>
+                <span>Atelier of Electrical Precision • Moodbidri, Karnataka — 574227</span>
+            </div>
+            <div class="flex flex-wrap gap-8 uppercase tracking-widest text-[11px]">
+                <a href="tel:+919845567967" class="hover:text-brass transition-colors">TELEPHONY: +91 98455 67967</a>
+                <a href="https://maps.app.goo.gl/cc5vegnQrebRo3KW6" target="_blank" rel="noopener noreferrer" class="hover:text-brass transition-colors">GOOGLE MAPS VERIFICATION</a>
+                <a href="#atelier" class="hover:text-brass transition-colors">FOLIOS</a>
+                <a href="#laboratory" class="hover:text-brass transition-colors">LABORATORY</a>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-between pt-8 border-t editorial-line text-[11px] text-boneMuted/60">
+            <span>© 2026 POWERMAX INVERTERS PRIVATE LIMITED. ALL RIGHTS RESERVED.</span>
+            <span>HAND-CRAFTED EDITORIAL DESIGN SYSTEM</span>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts & Cursor Physics -->
+    <script>
+        lucide.createIcons();
+
+        // Custom Cursor Follower with Smooth Spring Easing
+        const follower = document.getElementById('cursor-follower');
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            followerX += (mouseX - followerX) * 0.18;
+            followerY += (mouseY - followerY) * 0.18;
+            if (follower) {
+                follower.style.left = `${followerX}px`;
+                follower.style.top = `${followerY}px`;
+            }
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor state on links & buttons
+        document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                if (follower) {
+                    follower.style.width = '54px';
+                    follower.style.height = '54px';
+                    follower.style.backgroundColor = 'rgba(212, 163, 115, 0.12)';
+                    follower.style.borderColor = '#D4A373';
+                }
+            });
+            el.addEventListener('mouseleave', () => {
+                if (follower) {
+                    follower.style.width = '32px';
+                    follower.style.height = '32px';
+                    follower.style.backgroundColor = 'transparent';
+                    follower.style.borderColor = 'rgba(212, 163, 115, 0.45)';
+                }
+            });
+        });
+
+        // WhatsApp Direct Transmission
+        function transmitToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('orderName').value || 'Customer';
+            const town = document.getElementById('orderTown').value || 'Karnataka';
+            const service = document.getElementById('orderService').value;
+            const rating = document.getElementById('orderRating').value || 'N/A';
+            const details = document.getElementById('orderDetails').value || 'Seeking consultation.';
+
+            const message = `*Powermax Electrical Transmission*%0A%0A*Client:* ${encodeURIComponent(name)}%0A*Territory:* ${encodeURIComponent(town)} (Karnataka)%0A*Requirement:* ${encodeURIComponent(service)}%0A*Apparatus/Rating:* ${encodeURIComponent(rating)}%0A*Specifications:* ${encodeURIComponent(details)}%0A%0A_Dispatched via Powermax Editorial Interface_`;
+
+            const url = `https://wa.me/919845567967?text=${message}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
